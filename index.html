@@ -22,24 +22,7 @@
 </head>
 <body>
   <body></body>
-    <h1>Upload CSV File</h1>
-    <input type="file" id="fileInput" accept=".csv">
-    <pre id="output"></pre>
 
-    <script>
-        document.getElementById('fileInput').addEventListener('change', function(event) {
-            const file = event.target.files[0];
-            const reader = new FileReader();
-
-            reader.onload = function(e) {
-                const text = e.target.result;
-                document.getElementById('output').textContent = text; // Display the CSV content
-                // You can also parse the CSV content here if needed
-            };
-
-            reader.readAsText(file);
-        });
-    </script>
      <!-- The div where we'll insert our map -->
   <div id="map"></div>
 
