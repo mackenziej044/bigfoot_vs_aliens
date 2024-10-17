@@ -41,30 +41,26 @@ info.onAdd = function() {
 // Add the info legend to the map.
 info.addTo(map);
 
-// Add JSON files
-d3.json('bigfoot_map_data.json').then(data => {
-    console.log(data); // Process your JSON data here
-    // Example: Adding markers to the BIGFOOT_SIGHTINGS layer
-    data.sightings.forEach(sighting => {
-        let marker = L.marker([sighting.latitude, sighting.longitude], { icon: bigfootIcon }) // Use bigfootIcon
-            .bindPopup(`<b>Location:</b> ${sighting.location}<br><b>Date:</b> ${sighting.date}`)
+// Load both datasets using Promise.all
+Promise.all([
+    d3.csv('bigfoot_map_data.csv'), // Load Bigfoot sightings from CSV
+    d3.csv('ufo_map_data.csv') // Load UFO sightings from CSV
+]).then(([bigfootData, ufoData]) => {
+    // Process Bigfoot sightings data
+    bigfootData.forEach(row => {
+        let marker = L.marker([row.latitude, row.longitude], { icon: bigfootIcon })
+            .bindPopup(`<b>Classification:</b> ${row.classification}<br><b>Date:</b> ${row.date} <br><b>Report Number:</b> ${row.report_number}`)
             .addTo(layers.BIGFOOT_SIGHTINGS);
     });
-}).catch(error => {
-    console.error('Error loading the JSON data:', error);
-});
 
-  // Add JSON files (ufo)
-  d3.json('ufo_map_data.json').then(data => {
-    console.log(data); // Process your JSON data here
-    // Example: Adding markers to the UFO_Sightings layer
-    data.sightings.forEach(sighting => {
-        let marker = L.marker([sighting.latitude, sighting.longitude])
+    // Process UFO sightings data
+    ufoData.sightings.forEach(sighting => {
+        let marker = L.marker([sighting.latitude, sighting.longitude], { icon: ufoIcon })
             .bindPopup(`<b>Location:</b> ${sighting.location}<br><b>Date:</b> ${sighting.date}`)
-            .addTo(layers.BIGFOOT_SIGHTINGS);
+            .addTo(layers.UFO_SIGHTINGS);
     });
 }).catch(error => {
-    console.error('Error loading the JSON data:', error);
+    console.error('Error loading the datasets:', error);
 });
 
 // Bigfoot icon
