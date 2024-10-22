@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bigfoot vs Aliens By Month</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        /* Set canvas dimensions */
+        canvas {
+            max-width: 1050px;
+            max-height: 550px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+     <!-- Back to Home Link -->
+     <a href="home.html">Home</a>
+     <a href="index.html">Doomsday Sightings</a>
+     <a href="index_line.html">Sightings by Month</a>
+     <a href="index_stacked.html">Sightings by Year</a>
+     <a href="stacked_bar_page2.html">Top Sightings by State (Bar)</a>
+     <a href="polar_area_charts_page2.html">Top Sightings by State (Polar Area)</a>
+     
+    <h3>Bigfoot Sightings</h3>
+    <canvas id="bigfootChart"></canvas>
+    <h3>UFO Sightings</h3>
+    <canvas id="ufoChart"></canvas>
+    <script>
+        // Bigfoot Sightings Chart
+        const ctx1 = document.getElementById('bigfootChart').getContext('2d');
+        const bigfootChart = new Chart(ctx1, {
+            type: 'polarArea',
+            data: {
+                labels: ['Washington', 'California', 'Ohio', 'Florida', 'Oregon'],
+                datasets: [{
+                    label: 'Bigfoot Sightings',
+                    data: [601, 417, 303, 302, 249],
+                    backgroundColor: 'rgba(85, 77, 52, 0.8)',
+                    borderColor: 'rgba(21, 17, 3, 0.8)',
+                    borderWidth: 1,
+                    fill: false
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+        // UFO Sightings Chart
+        const ctx2 = document.getElementById('ufoChart').getContext('2d');
+        const ufoChart = new Chart(ctx2, {
+            type: 'polarArea',
+            data: {
+                labels: ['California', 'Washington', 'Florida', 'Texas', 'New York'],
+                datasets: [{
+                    label: 'UFO Sightings',
+                    data: [9651, 4267, 4201, 3677, 3217],
+                    backgroundColor: 'rgba(39, 245, 99, 0.8)',
+                    borderColor: 'rgba(9, 70, 27, 0.8)',
+                    borderWidth: 1,
+                    fill: false
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

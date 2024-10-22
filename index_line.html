@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bigfoot vs Aliens By Month</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        /* Set canvas dimensions */
+        canvas {
+            max-width: 1000px;
+            max-height: 400px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+     <!-- Back to Home Link -->
+     <a href="home.html">Home</a>
+     <a href="index.html">Doomsday Sightings</a>
+     <a href="index_line.html">Sightings by Month</a>
+     <a href="index_stacked.html">Sightings by Year</a>
+     <a href="stacked_bar_page2.html">Top Sightings by State (Bar)</a>
+     <a href="polar_area_charts_page2.html">Top Sightings by State (Polar Area)</a>
+     
+    <h3>Bigfoot Sightings</h3>
+    <canvas id="bigfootChart"></canvas>
+
+    <h3>UFO Sightings</h3>
+    <canvas id="ufoChart"></canvas>
+
+    <script>
+        // Bigfoot Sightings Chart
+        const ctx1 = document.getElementById('bigfootChart').getContext('2d');
+        const bigfootChart = new Chart(ctx1, {
+            type: 'line',
+            data: {
+                labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+                datasets: [{
+                    label: 'Bigfoot Sightings',
+                    data: [224, 154, 161, 209, 252, 354, 483, 457, 388, 486, 352, 194],
+                    backgroundColor: 'rgba(85, 77, 52, 0.8)',
+                    borderColor: 'rgba(21, 17, 3, 0.8)',
+                    borderWidth: 1,
+                    fill: false
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        // UFO Sightings Chart
+        const ctx2 = document.getElementById('ufoChart').getContext('2d');
+        const ufoChart = new Chart(ctx2, {
+            type: 'line',
+            data: {
+                labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+                datasets: [{
+                    label: 'UFO Sightings',
+                    data: [5619, 6033, 5561, 4801, 5849, 5123, 6574, 9845, 3986, 8376, 5982, 6687],
+                    backgroundColor: 'rgba(39, 245, 99, 0.8)',
+                    borderColor: 'rgba(9, 70, 27, 0.8)',
+                    borderWidth: 1,
+                    fill: false
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

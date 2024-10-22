@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bigfoot vs Aliens By Month</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        /* Set canvas dimensions */
+        canvas {
+            max-width: 50000px;
+            margin: 10px auto;
+        }
+    </style>
+</head>
+<body>
+    <h3>Bigfoot Sightings</h3>
+    <canvas id="bigfootChart"></canvas>
+
+    <h3>UFO Sightings</h3>
+    <canvas id="ufoChart"></canvas>
+
+    <script>
+        // Bigfoot Sightings Chart
+        const ctx1 = document.getElementById('bigfootChart').getContext('2d');
+        const bigfootChart = new Chart(ctx1, {
+            type: 'line',
+            data: {
+                labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+                datasets: [{
+                    label: 'Bigfoot Sightings',
+                    data: [224, 154, 161, 209, 252, 354, 483, 457, 388, 486, 352, 194],
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1,
+                    fill: false
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        // UFO Sightings Chart
+        const ctx2 = document.getElementById('ufoChart').getContext('2d');
+        const ufoChart = new Chart(ctx2, {
+            type: 'line',
+            data: {
+                labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+                datasets: [{
+                    label: 'UFO Sightings',
+                    data: [5619, 6033, 5561, 4801, 5849, 5123, 6574, 9845, 3986, 8376, 5982, 6687],
+                    borderColor: 'rgba(255, 99, 132, 1)',
+                    borderWidth: 1,
+                    fill: false
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
+  <!-- JavaScript files -->
+  <script type="text/javascript" src="page3.js"></script>
+  <!-- <script type="text/javascript" src="BF_markers.js"></script> -->
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bigfoot vs Aliens By Year</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+     <!-- Back to Home Link -->
+     <a href="home.html">Home</a>
+     <a href="index.html">Doomsday Sightings</a>
+     <a href="index_line.html">Sightings by Month</a>
+     <a href="index_stacked.html">Sightings by Year</a>
+     <a href="stacked_bar_page2.html">Top Sightings by State (Bar)</a>
+     <a href="polar_area_charts_page2.html">Top Sightings by State (Polar Area)</a>
+     
+
+    <canvas id="myChart" width="400" height="200"></canvas>
+    <script>
+        const ctx = document.getElementById('myChart').getContext('2d');
+        
+        const data = {
+            labels: ['2000', '2001', '2002', '2003', '2004', '2005', '2006', '2007', '2008', '2009', '2010', '2011', '2012','2013'],
+            datasets: [
+                {
+                    label: 'UFO Sightings',
+                    data: [3042, 3496, 4230, 4792, 5224, 5268, 4399, 4875, 5121, 5936, 4446, 5616, 8090, 4705],
+                    backgroundColor: 'rgba(39, 245, 99, 0.8)',
+                    borderColor: 'rgba(9, 70, 27, 0.8)',
+                    borderWidth: 1
+                },
+                {
+                    label: 'Bigfoot Sightings',
+                    data: [151, 137, 109, 158, 252, 225, 193, 174, 150, 126, 104, 125, 143, 84], 
+                    backgroundColor: 'rgba(85, 77, 52, 0.8)',
+                    borderColor: 'rgba(21, 17, 3, 0.8)',
+                    borderWidth: 1
+                    
+                },
+
+            ]
+        };
+
+        const config = {
+            type: 'bar',
+            data: data,
+            options: {
+                scales: {
+                    x: {
+                        stacked: true
+                    },
+                    y: {
+                        stacked: true,
+                        beginAtZero: true
+                    }
+                }
+            }
+        };
+
+        const myChart = new Chart(ctx, config);
+    </script>
+</body>
+</html>

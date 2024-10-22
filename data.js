@@ -43,11 +43,11 @@ info.addTo(map);
 
 // Load both datasets using Promise.all
 const bigfootpromise = 'bigfoot_map_data.csv'
-const ufopromise = 'ufo_map_data.csv'
+const ufopromise = 'ufo_map_data_clean.csv'
 
 Promise.all([
-    d3.csv('bigfoot_map_data_test10.csv'),
-        d3.csv('ufo_map_data_test10.csv')
+    d3.csv('bigfoot_map_data_clean.csv'),
+        d3.csv('ufo_map_data_clean.csv')
 ]).then(([bigfootData, ufoData]) => {
     console.log(bigfootData)
     console.log(ufoData)
@@ -83,42 +83,3 @@ var ufoIcon = L.icon({
     iconAnchor: [0, 0], // point of the icon which will correspond to marker's location
     popupAnchor: [0, 0] // point from which the popup should open relative to the iconAnchor
 });
-
-// Promise.all([
-//     d3.csv("bigfoot_map_data.csv"),
-//     d3.csv("ufo_map_data.csv"),
-// ]).then(function(files) { 
-//     console.log(files)
-//     console.log(files[0]),
-//     console.log(files[1])
-//     // files[0] will contain file1.csv
-//     // files[1] will contain file2.csv
-// }).catch(function(err) {
-//     // handle error here
-
-// })
-
-// // conSize
-// Point
-// null
-// Size of the icon image in pixels.
-// iconAnchor
-// Point
-// null
-// The coordinates of the "tip" of the icon (relative to its top left corner). The icon will be aligned so that this point is at the marker's geographical location. Centered by default if size is specified, also can be set in CSS with negative margins.
-// popupAnchor
-// Point
-// [0, 0]
-// The coordinates of the point from which popups will "open", relative to the icon anchor.
-// tooltipAnchor
-// Point
-// [0, 0]
-// The coordinates of the point from which tooltips will "open", relative to the icon anchor.
-// shadowSize
-// Point
-// null
-// Size of the shadow image in pixels.
-// shadowAnchor
-// Point
-// null
-// The coordinates of the "tip" of the shadow (relative to its top left corner) (the same as iconAnchor if not specified).

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bigfoot vs Aliens</title>
+
+     <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""/>
+
+<!-- Leaflet JavaScript code -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+  integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+  crossorigin=""></script>
+
+<!-- Our CSS -->
+<link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+<!-- Back to Home Link -->
+<a href="home.html">Home</a>
+<a href="index.html">Doomsday Sightings</a>
+<a href="index_line.html">Sightings by Month</a>
+<a href="index_stacked.html">Sightings by Year</a>
+<a href="stacked_bar_page2.html">Top Sightings by State (Bar)</a>
+<a href="polar_area_charts_page2.html">Top Sightings by State (Polar Area)</a>
+
+    <body>
+        <div>
+            <canvas id="myChart"></canvas>
+          </div>
+          
+          <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+          
+          <canvas id="myChart"></canvas>
+          <script>
+              const ctx = document.getElementById('myChart');
+              
+              new Chart(ctx, {
+                  type: 'bar',
+                  data: {
+                      labels: ['California', 'Washington', 'Florida', 'Texas', 'New York', 'Ohio', 'Oregon'],
+                      datasets: [
+                          {
+                              label: 'UFO Sightings by State',
+                              data: [9651, 4267, 4201, 3677, 3217, 2424, 1845],
+                              backgroundColor: 'rgba(39, 245, 99, 0.8)',
+                              borderColor: 'rgba(9, 70, 27, 0.8)',
+                              borderWidth: 1
+                          },
+                          {
+                              label: 'Bigfoot Sightings by State',
+                              data: [417, 601, 302, 230, 111, 303, 249],
+                              backgroundColor: 'rgba(85, 77, 52, 0.8)',
+                              borderColor: 'rgba(21, 17, 3, 0.8)',
+                              borderWidth: 1
+                          }
+                      ]
+                  },
+                  options: {
+                      scales: {
+                          x: {
+                              stacked: true
+                          },
+                          y: {
+                              stacked: true
+                          }
+                      },
+                      responsive: true
+                  }
+              });
+              </script> 
+   </body>
+   </html>
