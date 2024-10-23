@@ -5,11 +5,12 @@ Members: Mackenzie Jarrett and Kelly Brookshire
 
 Project Title: Bigfoot vs Aliens
 
-Project Description: XXXX
+Project Description: Each of us is interested in Sci-fi/mythological creatures and cryptids, so an interactive map that would be informative and fun to peruse might be educational and entertaining! Project uses 2 different data sets to create an interactive map and various graphs for interest.
 
-Using Code: XXX
+Using Code: HTML pages are created using javascript and css code files to explore sightings data for Bigfoot and UFO's.
 
-How to Use Project: XXX
+How to Use Project: Access HTML pages via Git Hub Repository listed below.
+https://github.com/mackenziej044/bigfoot_vs_aliens.git
 
 Credits:
 Datasets used:
@@ -19,6 +20,13 @@ https://www.kaggle.com/datasets/thedevastator/unlocking-mysteries-of-bigfoot-thr
 Markers - PNG's used:
 https://www.pngegg.com/en/png-tgcnq
 https://www.pngegg.com/en/png-cqkmj
+
+Javascript Library Resource - used some code snippets:
+https://www.chartjs.org/
+
+Bigfoot/Alien Home page JPG:
+https://www.bing.com/images/create/bigfoot-witnessing-ufo27s-in-the-forest/1-6716f046813b40e58bbb3163ae3d9b45?id=TLVmmYbR7YIZVFVAzqD2FQ%3d%3d&view=detailv2&idpp=genimg&thId=OIG4.6tiPAbVeIPLBagY1b_hx&skey=VGuV_DSPh9qcbUjVk8KQ03SlIFFgn-UAqiAE-pZ-8RE&FORM=GCRIDP&mode=overlay
+
 
 MIT License
 
